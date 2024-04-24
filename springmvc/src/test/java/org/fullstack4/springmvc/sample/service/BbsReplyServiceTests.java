@@ -19,12 +19,12 @@ public class BbsReplyServiceTests {
     private BbsReplyServiceIf bbsReplyServiceIf;
 
     @Test
-    public void testRegist(){
+    public void testReplyRegist(){
         BbsReplyDTO bbsReplyDTO = BbsReplyDTO.builder()
-                .bbs_idx(11)
-                .user_id("test")
-                .title("제목 테스트")
+                .bbs_idx(536)
+                .user_id("bori")
+                .title("댓글 테스트")
                 .build();
-        bbsReplyServiceIf.reply_regist(bbsReplyDTO);
+        int result = bbsReplyServiceIf.reply_regist(bbsReplyDTO);
     }
 }

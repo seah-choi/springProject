@@ -40,6 +40,8 @@ public class BbsServiceImpl implements BbsServiceIf{
         List<BbsDTO> bbsDTOList = bbsMapper.listAll().stream()
                 .map(vo -> modelMapper.map(vo, BbsDTO.class))
                 .collect(Collectors.toList());
+
+        log.info("BbsServiceImpl >> listAll() : "+ bbsDTOList.toString());
         return bbsDTOList;
     }
 

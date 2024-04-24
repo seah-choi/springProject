@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>--%>
 <%--<!DOCTYPE html>--%>
 <%--<html>--%>
@@ -11,7 +12,8 @@
 <%--<a href="hello-servlet">Hello Servlet</a>--%>
 <%--</body>--%>
 <%--</html>--%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -128,18 +130,15 @@
                         <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
                     </a>
                 </div>
-
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#" class="nav-link px-2">Home</a></li>
                     <li><a href="/bbs/list" class="nav-link px-2">List</a></li>
                     <li><a href="/bbs/regist" class="nav-link px-2">Regist</a></li>
                     <li><a href="/member/view?user_id=${member.user_id}" class="nav-link px-2">MyPage</a></li>
                 </ul>
-
-                <div class="col-md-3 text-end">
+                    <div class="col-md-3 text-end">
                     <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='/login/login'">Login</button>
                     <button type="button" class="btn btn-primary" onclick="location.href='/member/join'">Sign-up</button>
-                </div>
             </header>
         </div>
 

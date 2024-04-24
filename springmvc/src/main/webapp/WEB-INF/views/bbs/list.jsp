@@ -29,27 +29,7 @@
 </head>
 <body>
 <div class="container-fluid">
-<div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
-            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-            </a>
-        </div>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/index.jsp" class="nav-link px-2">Home</a></li>
-            <li><a href="/bbs/list" class="nav-link px-2">List</a></li>
-            <li><a href="/bbs/regist" class="nav-link px-2">Regist</a></li>
-            <li><a href="/member/view?user_id=${member.user_id}" class="nav-link px-2">MyPage</a></li>
-        </ul>
-
-        <div class="col-md-3 text-end">
-            <span style="font-weight: bold">${member.name}</span> 님&nbsp;
-            <button type="button" class="btn btn-primary" onclick="location.href='/login/logout'">Logout</button>
-        </div>
-    </header>
-</div>
+    <%@ include file="../common/header.jsp"%>
 </div>
 <div class="card-body">
     <h1 style="margin-bottom: 50px;">List</h1>
@@ -70,7 +50,7 @@
             <input type="date" class="form-control" name="search_date1" id="search_date1" maxlength="100" placeholder="등록일 시작" value='<c:out value="${pageRequestDTO.search_date1}"/>' style="width: 400px; margin-right: 5px;">
             <label for="search_date1">등록일 시작</label>
             <input type="date" class="form-control" name="search_date2" id="search_date2" maxlength="100" placeholder="등록일 끝" value='<c:out value="${pageRequestDTO.search_date2}"/>' style="width: 400px">
-            <label for="search_date2">등록일 끝</label>
+            <label for="search_date2" style="margin-left: 405px;">등록일 끝</label>
             <div id="btn" style="margin-left: 20px; margin-top: 5px;">
                 <button type="submit" class="btn btn-primary btn-lg" style="width: 100px;">Search</button>
                 <button type="reset" class="btn btn-secondary btn-lg" style="width: 100px;">Clear</button>
@@ -95,7 +75,7 @@
                     <td>
                         <a href="/bbs/view?idx=${list.idx}">
                         <c:out value="${fn:substring(list.title,0,10)}"/>
-                        <c:if test="${fn:length(list.title) > 10}"> ...</c:if></a></td>
+                        <c:if test="${fn:length(list.title) > 10}"> ...</c:if></a><span style="color: #0472f6; margin-left: 10px;">${list.reply_cnt}</span></td>
                     <td>${list.user_id}</td>
                     <td>${list.display_date}</td>
                     <td>${list.read_cnt}</td>

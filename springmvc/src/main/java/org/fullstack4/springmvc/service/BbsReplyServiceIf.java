@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface BbsReplyServiceIf {
     int reply_regist(BbsReplyDTO bbsReplyDTO);
-    List<BbsReplyDTO> reply_list();
+    List<BbsReplyDTO> reply_list(int bbs_idx);
     int update_reply_cnt(int bbs_idx);
+    //int delete_reply_cnt(int bbs_idx);
 }

@@ -31,13 +31,13 @@
     </insert>
 
     <select id="listAll" resultType="org.fullstack4.springmvc.domain.BbsVO">
-        SELECT idx, user_id, title, content, display_date, read_cnt, reg_date, modify_date
+        SELECT idx, user_id, title, content, display_date, read_cnt, reg_date, modify_date, reply_cnt
         FROM tbl_bbs
         ORDER BY idx DESC
     </select>
 
     <select id="view" resultType="org.fullstack4.springmvc.domain.BbsVO">
-        SELECT idx, user_id, title, content, display_date, read_cnt, reg_date, interest, modify_date
+        SELECT idx, user_id, title, content, display_date, read_cnt, reg_date, interest, modify_date, reply_cnt
         FROM tbl_bbs
         WHERE idx = #{idx}
     </select>
@@ -57,7 +57,7 @@
     </select>
 
     <select id="bbsListByPage" resultType="org.fullstack4.springmvc.domain.BbsVO">
-        SELECT idx, user_id, title, content, display_date, read_cnt, reg_date, modify_date
+        SELECT idx, user_id, title, content, display_date, read_cnt, reg_date, modify_date, reply_cnt
         FROM tbl_bbs
         <include refid="whereCondition"></include>
         ORDER BY idx DESC

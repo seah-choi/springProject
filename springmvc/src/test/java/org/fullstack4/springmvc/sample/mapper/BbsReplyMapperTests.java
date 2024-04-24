@@ -22,8 +22,8 @@ public class BbsReplyMapperTests {
     @Test
     public void testRegist() {
         BbsReplyVO bbsReplyVO = BbsReplyVO.builder()
-                .bbs_idx(10)
-                .user_id("test")
+                .bbs_idx(529)
+                .user_id("seah")
                 .title("댓글 테스트")
                 .build();
 
